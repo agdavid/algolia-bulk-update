@@ -38,7 +38,7 @@ $ node bulkRetrieval.js
 
 Around line 36 of `bulkUpdate.js` you can change the attributes or add new attributes to your hits. These will be included in the partialUpdateObjects.
 
-Run the command below to retrieve records from an index and save to a local file `records.json`:
+Run the command below to retrieve records from `records.json` and update with your changes:
 
 ```bash
 $ node bulkUpdate.js
