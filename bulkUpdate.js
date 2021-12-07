@@ -33,6 +33,7 @@ fs.createReadStream("records.json", { encoding: "utf8" })
         Promise.all(
           chunks.map((chunk) => {
             let updatedChunk = chunk.map((hit) => {
+              ///////
               // update attribute in hit
               let newAccessStrings = [
                 ...hit.accessStrings,
@@ -44,6 +45,7 @@ fs.createReadStream("records.json", { encoding: "utf8" })
               };
             });
             console.log(updatedChunk);
+            ///////
             index.partialUpdateObjects(updatedChunk).then((response) => {
               console.log(response);
             });
