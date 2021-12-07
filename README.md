@@ -12,7 +12,7 @@ $ git clone git@github.com:agdavid/algolia-bulk-update.git
 $ npm install
 ```
 
-3. In each file `bulkRetrieval.js` and `bulkUpdate.js` add your credentials:
+3. In each file `bulkRetrieval.js`, `bulkUpdate.js`, and `singleRecordUpdate.js` add your credentials:
 
 ```
 const appId = // your App ID;
@@ -26,6 +26,12 @@ const indexName = // your index name;
 let batchSize = // set batch size;
 ```
 
+5. In `singleRecordUpdate.js` set your count of total records to update:
+
+```
+let count = // set count of records to update;
+```
+
 # Retrieve Records
 
 Run the command below to retrieve records from an index and save to a local file `records.json`:
@@ -34,7 +40,7 @@ Run the command below to retrieve records from an index and save to a local file
 $ node bulkRetrieval.js
 ```
 
-# Update Records
+# Batch Update Records
 
 Around line 36 of `bulkUpdate.js` you can change the attributes or add new attributes to your hits. These will be included in the partialUpdateObjects.
 
@@ -42,4 +48,14 @@ Run the command below to retrieve records from `records.json` and update with yo
 
 ```bash
 $ node bulkUpdate.js
+```
+
+# Single Update Records
+
+Around line 36 of `singleRecordUpdate.js` you can change the attributes or add new attributes to your hits. These will be included in the partialUpdateObject.
+
+Run the command below to retrieve records from `records.json` and update with your changes:
+
+```bash
+$ node singleRecordUpdate.js
 ```
